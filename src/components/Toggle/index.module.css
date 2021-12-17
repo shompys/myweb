@@ -1,0 +1,55 @@
+.toggle{
+    cursor: pointer;
+    width: 60px;
+    height: 55px;
+    position: relative;
+    z-index: 1000;
+}
+
+.toggle span, .toggle span:before, .toggle span:after{
+    border-radius: 100px;
+    display: block;
+    width: 40px;
+    height: 4.5px;
+    background-color: var(--gray-1);
+    position: absolute;
+    color: #fff;
+    transition: ease .5s;
+}
+.toggle span:before, .toggle span:after{
+    content: '';
+}
+
+.toggle span{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.toggle span:after{
+    bottom: 14px;
+}
+.toggle span:before{
+    top: 14px;
+}
+
+.toggle.close span{
+    transform: rotate(45deg);
+    width: 30px;
+}
+.toggle.close span:before{
+    top: 0px;
+    width:30px;
+    transform: rotate(90deg);
+}
+.toggle.close span:after{
+    opacity: 0;
+}
+
+.show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    
+}

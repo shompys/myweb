@@ -1,0 +1,17 @@
+.nav{
+    display: flex;
+}
+.ul{
+    margin: 0;
+    padding: .5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+.li{
+    list-style-type: none;
+    padding: .5rem;
+}
+.li:hover{
+    transform:scale(1.1)
+}
