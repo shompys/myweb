@@ -13,6 +13,6 @@ export const routes: Routes[] = [
     },
     {
         path: '/prueba',
-        name: 'prueba'
+        name: 'prueba',
     }
 ]

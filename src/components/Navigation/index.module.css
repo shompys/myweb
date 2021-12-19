@@ -1,6 +1,5 @@
 .nav{
-    display: flex;
-    background-color: var(--color-github);
+    
 }
 .ul{
     margin: 0;
@@ -14,5 +13,5 @@
     padding: .5rem;
 }
 .li:hover{
-    transform:scale(1.1)
+    transform:scale(1.2)
 }
