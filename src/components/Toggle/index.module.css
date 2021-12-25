@@ -1,7 +1,7 @@
 .toggle{
     cursor: pointer;
-    width: 60px;
-    height: 55px;
+    width: 40px;
+    height: 30px;
     position: relative;
     z-index: 1000;
 }
@@ -10,10 +10,9 @@
     border-radius: 100px;
     display: block;
     width: 40px;
-    height: 4.5px;
-    background-color: var(--gray-1);
+    height: 4px;
+    background-color: #fff;
     position: absolute;
-    color: #fff;
     transition: ease .5s;
 }
 .toggle span:before, .toggle span:after{
@@ -28,10 +27,10 @@
     margin: auto;
 }
 .toggle span:after{
-    bottom: 14px;
+    bottom: 10px;
 }
 .toggle span:before{
-    top: 14px;
+    top: 10px;
 }
 
 .toggle.close span{
@@ -51,5 +50,4 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
-    
 }

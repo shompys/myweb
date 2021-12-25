@@ -1,0 +1,57 @@
+.section{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);    
+}
+
+.contentImage{
+    margin: auto;
+}
+
+.contentText{
+    padding: 2rem 3rem;
+    place-self: center;
+}
+
+.contentText > p{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.image{
+    margin: auto;
+    display: block;
+}
+.button{
+    border: none;
+    padding: 1rem 3rem;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 50px;
+    background: var(--color-github);
+    text-transform: uppercase;
+    white-space: nowrap;
+    display:block;
+    margin: auto;
+    cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+    .section{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contentText{
+        padding: 2rem 5rem;
+        grid-row: 1/2;
+    }
+    .contentImage{
+        grid-column: 2/3;
+    }
+    .contentText > h1{
+        font-size: 36px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .contentText{
+        width: 35rem;
+        transition: all 1s ease;
+    }
+
+}

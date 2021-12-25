@@ -1,25 +1,42 @@
 :root{
   --color-github: #24292e;
 
+  --color-sky-1: #D9E2EC;
+
   --gray-1: #7e7e7e;
   --gray-2: #575757;
   --gray-3: #6c757d;
 }
+/*
+Tamaños:
 
+tablet: 500px;
+desktop: 768px;
+tv: 1440px;
+
+*/
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* background-color: var(--color-sky-1); */
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  
 }
 
 * {
   box-sizing: border-box;
+  color: #0d013d;
+}
+li{
+  list-style-type: none;
+}
+ul, h1, p{
+  margin: 0;
+  padding: 0;
 }

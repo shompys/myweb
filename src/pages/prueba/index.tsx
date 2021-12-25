@@ -3,7 +3,7 @@ import React from 'react'
 const Prueba = () => {
     return (
         <div>
-            prueba
+            En construcción...
         </div>
     )
 }

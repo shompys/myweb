@@ -5,14 +5,10 @@ interface Routes {
 export const routes: Routes[] = [
     {
         path: '/',
-        name: 'home',
-    },
-    {
-        path: '/portfolio',
-        name: 'portfolio',
+        name: 'Inicio',
     },
     {
         path: '/prueba',
-        name: 'prueba',
-    }
+        name: 'Nada',
+    },
 ]

@@ -1,0 +1,10 @@
+.footer{
+    height: 30vh;
+    background: var(--color-github);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+}
+.section1 > ul > li, .section2 > ul > li {
+    color:#fff;
+}
