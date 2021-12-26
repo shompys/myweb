@@ -2,30 +2,30 @@ import { useEffect, useState } from "react";
 
 export enum Responsive {
     TABLET= 500,
-    DESKTOP=768,
-    TV=1440,
+    // DESKTOP=768,
+    // TV=1440,
 }
 
 const useMobile = (): { isMobile: boolean } => {
-    
-    const [state, setState] = useState<boolean>(true);
+    const [sizeWidth, setSizeWidth] = useState<number>(0);
+
+    //the object window not exist in the server
+    useEffect(() => {
+        setSizeWidth(innerWidth)
+    },[])
 
     useEffect(() => {
+        
+        const handleSize = () => setSizeWidth(innerWidth);
 
-        const adaptationAnalyze = () => innerWidth < Responsive.TABLET ? setState(true) : setState(false);
-
-        window.addEventListener('resize', adaptationAnalyze);
-        window.addEventListener('DOMContentLoaded', adaptationAnalyze);
-
-        return () => {
-            window.removeEventListener('resize', adaptationAnalyze);
-            window.removeEventListener('DOMContentLoaded', adaptationAnalyze);
-        }
+        window.addEventListener('resize', handleSize);
+       
+        return () => window.removeEventListener('resize', handleSize);
 
     });
 
     return {
-        isMobile: state
+        isMobile: sizeWidth < Responsive.TABLET ? true: false,
     }
 }
 
