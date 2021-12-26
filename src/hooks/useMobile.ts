@@ -8,17 +8,21 @@ export enum Responsive {
 
 const useMobile = (): { isMobile: boolean } => {
     
-    const [state, setState] = useState<boolean>(false);
+    const [state, setState] = useState<boolean>(true);
 
     useEffect(() => {
-        const tablet = matchMedia(`(min-width: ${ Responsive.TABLET }px)`);
-        
-        const screen = (e: MediaQueryListEvent) => e.matches ? setState(false) : setState(true);
 
-        tablet.addEventListener("change", screen);
+        const adaptationAnalyze = () => innerWidth < Responsive.TABLET ? setState(true) : setState(false);
 
-        return () => tablet.removeEventListener('change', screen);
-    }, []);
+        window.addEventListener('resize', adaptationAnalyze);
+        window.addEventListener('DOMContentLoaded', adaptationAnalyze);
+
+        return () => {
+            window.removeEventListener('resize', adaptationAnalyze);
+            window.removeEventListener('DOMContentLoaded', adaptationAnalyze);
+        }
+
+    });
 
     return {
         isMobile: state

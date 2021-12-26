@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { routes } from 'components/Navigation/routes';
 import styles from './index.module.css';
 import github from '../../assets/svg/github.svg';
@@ -11,13 +11,23 @@ import useMobile from '../../hooks/useMobile';
 
 export const Navigation: FC = () => {
 
+    const [ disabledList, setDisabledList ] = useState<boolean>(true)
+
     const { isMobile } = useMobile();
+    const handleClick = () => setDisabledList(e => !e);
+
+    useEffect(() => {
+
+        if( !isMobile ) setDisabledList(true);
+
+    }, [ isMobile ])
 
     return (
         
         <nav className={styles.nav} >
 
             <ul className={styles.contentPagesExternals}>
+                
                 <li>
                     <a href="https://www.twitch.tv/shompys" target="_blank" rel="noreferrer">
                         <Image src={twitch} alt="twitch icon" />
@@ -34,20 +44,20 @@ export const Navigation: FC = () => {
                     </a>
                 </li>
             </ul>
-            {
-                isMobile ? <Toggle /> : (
-                    <ul className={styles.ul}>
-                        {
-                        routes.map(({ path, name }) =>
-                            <li key={ name } className={styles.li}>
-                                <Link href={ { pathname: path } } ><a> { name } </a></Link>
-                            </li>)
-                        }
-                    </ul>
-                )
-            }
-            
 
+            {
+                isMobile && <Toggle handleClick={ handleClick } />
+            }
+
+            <ul className={`${styles.ul} ${disabledList && styles.ulOff}`}>
+                {
+                    routes.map(({ path, name }) =>
+                        <li key={ name } className={`${styles.li}`} onClick={ handleClick }>
+                            <Link href={ { pathname: path } } ><a className={styles.a}> { name } </a></Link>
+                        </li>)
+                }
+            </ul>
+            
         </nav>
     )
 }

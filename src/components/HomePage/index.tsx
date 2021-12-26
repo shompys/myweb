@@ -9,11 +9,11 @@ export const HomePage: FC = () => {
             <section className={styles.section}>
 
                 <div className={styles.contentImage}>
-                    <Image src={programming} alt="programming" width={500} height={500}className={styles.image} priority/>
+                    <Image src={programming} alt="programming" width={500} height={500} className={styles.image} priority/>
                     <button className={styles.button} onClick={() => window.alert('F')}>No Presionar</button>
                 </div>
                 <div className={styles.contentText}>
-                    <p>Hola, soy desarrollador web y este sitio tiene contenido de relleno sin ningún sentido por ahora.</p>
+                    <p>Hola mi nombre es Jonathan, soy desarrollador web y este sitio tiene contenido de relleno sin ningún sentido por ahora.</p>
                 </div>
 
             </section> 

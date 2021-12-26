@@ -1,5 +1,9 @@
 .header{
-    background: #4776E6
+    background: #4776E6;
+    z-index: 1000;
+    height: 91.9375px;
+    position: sticky;
+    top: 0;
 }
 .div{
     height: 5vh;
