@@ -1,0 +1,24 @@
+.standByScreen {
+    background-color:#fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    display: grid;
+    place-content: center;
+}
+
+.svg{
+    animation: rotation 5s linear infinite;
+}
+
+@keyframes rotation{
+
+    to{
+        transform: rotateZ(-360deg);
+
+    }
+
+}

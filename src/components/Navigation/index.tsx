@@ -30,17 +30,17 @@ export const Navigation: FC = () => {
                 
                 <li>
                     <a href="https://www.twitch.tv/shompys" target="_blank" rel="noreferrer">
-                        <Image src={twitch} alt="twitch icon" />
+                        <Image src={twitch} alt="twitch icon" priority />
                     </a>
                 </li>
                 <li>
                     <a href="https://github.com/shompys" target="_blank" rel="noreferrer">
-                        <Image src={github} alt="github icon" />
+                        <Image src={github} alt="github icon" priority />
                     </a>
                 </li>
                 <li>
                     <a href="https://www.linkedin.com/in/jonathangomezit/" target="_blank" rel="noreferrer">
-                        <Image src={linkedin} alt="linkedin icon" />
+                        <Image src={linkedin} alt="linkedin icon" priority />
                     </a>
                 </li>
             </ul>
