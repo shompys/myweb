@@ -6,8 +6,8 @@ export enum Responsive {
     // TV=1440,
 }
 
-const useMobile = (): { isMobile: boolean } => {
-    const [sizeWidth, setSizeWidth] = useState<number>(0);
+const useMobile = (): { isMobile: boolean | undefined } => {
+    const [sizeWidth, setSizeWidth] = useState<number | undefined>(undefined);
 
     //the object window not exist in the server
     useEffect(() => {
@@ -23,9 +23,9 @@ const useMobile = (): { isMobile: boolean } => {
         return () => window.removeEventListener('resize', handleSize);
 
     });
-
+    
     return {
-        isMobile: sizeWidth < Responsive.TABLET ? true: false,
+        isMobile: sizeWidth && sizeWidth < Responsive.TABLET ? true: false,
     }
 }
 

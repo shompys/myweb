@@ -15,7 +15,7 @@ export const Navigation: FC = () => {
 
     const { isMobile } = useMobile();
     const handleClick = () => setDisabledList(e => !e);
-
+    console.log(isMobile)
     useEffect(() => {
         // if it is not mobile, always disabled
         if( !isMobile ) setDisabledList(true);
@@ -53,7 +53,7 @@ export const Navigation: FC = () => {
                 {
                     routes.map(({ path, name }) =>
                         <li key={ name } className={`${styles.li}`} onClick={ handleClick }>
-                            <Link href={ { pathname: path } } ><a className={styles.a}> { name } </a></Link>
+                            <Link href={ { pathname: path } } ><a> { name } </a></Link>
                         </li>)
                 }
             </ul>
