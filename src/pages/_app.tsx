@@ -10,18 +10,18 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const [isShow, setIsShow] = useState<boolean>(true);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    setTimeout(() => {
+  //   setTimeout(() => {
 
-      setIsShow(false)
+  //     setIsShow(false)
 
-    }, 3000)
-  },[])
+  //   }, 3000)
+  // },[])
 
   return (<>
       <HeadMetas title={pageProps.title}/>
-      {isShow && <StandByScreen/>}
+      {/* {isShow && <StandByScreen/>} */}
       <Layout>
         <Component {...pageProps} />
       </Layout>
