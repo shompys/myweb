@@ -1,0 +1,25 @@
+@URL = http://127.0.0.1
+
+@PORT=3000
+
+GET {{URL}}:{{PORT}}/api/users
+###
+GET {{URL}}:{{PORT}}/api/users/61d25b20cb71da6f774c5e08
+### 
+POST {{URL}}:{{PORT}}/api/users
+Content-Type: application/json
+
+{
+    "name": "jonathan",
+    "username": "shompys",
+    "email": "jonathangomezit@gmail.com",
+    "password": "seguro"
+}
+###
+PATCH {{URL}}:{{PORT}}/api/users/61d25b20cb71da6f774c5e08
+Content-Type: application/json
+
+{
+    "name": "jonathan",
+    "isActive": true
+}

@@ -7,8 +7,4 @@ export const routes: Routes[] = [
         path: '/',
         name: 'Inicio',
     },
-    {
-        path: '/prueba',
-        name: 'Nada',
-    },
 ]

@@ -1,4 +1,4 @@
 .main{
     /* total del viewport - footer - header */
-    min-height: calc(100vh - 284.391px - 93.3906px);
+    /* min-height: calc(100vh - 284.391px - 93.3906px); */
 }

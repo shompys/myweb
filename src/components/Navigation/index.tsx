@@ -15,7 +15,7 @@ export const Navigation: FC = () => {
 
     const { isMobile } = useMobile();
     const handleClick = () => setDisabledList(e => !e);
-    console.log(isMobile)
+    
     useEffect(() => {
         // if it is not mobile, always disabled
         if( !isMobile ) setDisabledList(true);
