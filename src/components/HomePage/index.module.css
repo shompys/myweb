@@ -1,20 +1,25 @@
 .section{
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
 }
 
 .contentImage{
     margin: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .contentText{
-    padding: 2rem 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 5rem;
     place-self: center;
+    min-width: 25rem;
 }
 
 .contentText > p{
     font-size: 1.5em;
-    font-weight: bolder;
+    line-height: 1.5em;
 }
 .image{
     margin: auto;
@@ -34,23 +39,18 @@
     cursor: pointer;
 }
 @media screen and (min-width: 768px) {
-    .section{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .contentText{
-        padding: 2rem 5rem;
-        grid-row: 1/2;
-    }
-    .contentImage{
-        grid-column: 2/3;
-    }
+
     .contentText > h1{
-        font-size: 36px;
+        font-size: 2.25rem;
     }
 }
 @media screen and (min-width: 1440px) {
-    .contentText{
-        width: 35rem;
+    .section{
+        padding-left: 10rem;
+        padding-right: 15rem;
     }
-
+    .contentText{
+        width: 33rem;
+        padding-bottom: 0;
+    }
 }
