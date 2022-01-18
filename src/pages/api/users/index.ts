@@ -5,6 +5,7 @@ const users = async (
    req: NextApiRequest,
    res: NextApiResponse
 ) => {
+        
     const { method } = req;
     
     switch( method ) {
