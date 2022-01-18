@@ -1,4 +1,4 @@
-import jwt, { Secret, SignOptions } from 'jsonwebtoken';
+import jwt, { Secret } from 'jsonwebtoken';
 import { Error } from 'mongoose';
 
 import { NextApiRequest } from 'next';
