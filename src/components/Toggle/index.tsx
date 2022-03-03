@@ -3,21 +3,15 @@ import styles from './index.module.css';
 
 interface Toggle {
     handleClick: () => void;
+    isOpenToggle: boolean;
 }
 
-export const Toggle: FC<Toggle> = ({ handleClick }) => {
+export const Toggle: FC<Toggle> = ({ handleClick, isOpenToggle }) => {
 
     const { toggle, close } = styles;
 
-    const [openToggle, setOpenToggle] = useState<boolean>(false);
-    
-    const handleToggle = () => {
-        handleClick();
-        setOpenToggle( e => !e);
-    };
-
     return (
-        <div className={`${ toggle } ${openToggle && close}`} onClick={ handleToggle }>
+        <div className={`${ toggle } ${isOpenToggle && close}`} onClick={ handleClick }>
             <span></span>
         </div>
     )

@@ -13,7 +13,7 @@ export const Navigation: FC = () => {
 
     const [ disabledList, setDisabledList ] = useState<boolean>(true)
 
-    const { isMobile } = useMobile();
+    const isMobile = useMobile();
     const handleClick = () => setDisabledList(e => !e);
     
     useEffect(() => {
@@ -46,7 +46,7 @@ export const Navigation: FC = () => {
             </ul>
 
             {
-                isMobile && <Toggle handleClick={ handleClick } />
+                isMobile && <Toggle handleClick={ handleClick } isOpenToggle={ !disabledList }/>
             }
 
             <ul className={`${styles.ul} ${disabledList && styles.ulOff}`}>

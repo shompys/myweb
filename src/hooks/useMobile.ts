@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from 'react';
 
 export enum Responsive {
     TABLET= 500,
@@ -6,27 +6,32 @@ export enum Responsive {
     // TV=1440,
 }
 
-const useMobile = (): { isMobile: boolean | undefined } => {
-    const [sizeWidth, setSizeWidth] = useState<number | undefined>(undefined);
-
-    //the object window not exist in the server
-    useEffect(() => {
-        setSizeWidth(innerWidth)
-    },[])
+const useMobile = () => {
+    // typeof window !== 'undefined' && innerWidth < Responsive.TABLET ? true : false
+    const [isMobile, setIsMobile] = useState<boolean>(
+        typeof window !== 'undefined' ? 
+            innerWidth < Responsive.TABLET ? 
+                true 
+            : 
+                false 
+        : 
+            true //Server Side Render me pide que sea true nose porque
+    );
 
     useEffect(() => {
         
-        const handleSize = () => setSizeWidth(innerWidth);
+        const handleSize = () => setIsMobile(
+            innerWidth < Responsive.TABLET ? true : false
+        )
 
         window.addEventListener('resize', handleSize);
        
         return () => window.removeEventListener('resize', handleSize);
 
-    });
-    
-    return {
-        isMobile: sizeWidth && sizeWidth < Responsive.TABLET ? true: false,
-    }
+    }, []);
+
+    return isMobile;
+
 }
 
 export default useMobile;
