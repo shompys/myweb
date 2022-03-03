@@ -7,19 +7,14 @@ export enum Responsive {
 }
 
 const useMobile = () => {
-    // typeof window !== 'undefined' && innerWidth < Responsive.TABLET ? true : false
-    const [isMobile, setIsMobile] = useState<boolean>(
-        typeof window !== 'undefined' ? 
-            innerWidth < Responsive.TABLET ? 
-                true 
-            : 
-                false 
-        : 
-            true //Server Side Render me pide que sea true nose porque
-    );
+    const [isMobile, setIsMobile] = useState<boolean>(true);
 
     useEffect(() => {
-        
+
+        if(typeof window !== 'undefined') {
+            setIsMobile(innerWidth < Responsive.TABLET ? true : false)
+        }
+
         const handleSize = () => setIsMobile(
             innerWidth < Responsive.TABLET ? true : false
         )

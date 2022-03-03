@@ -1,6 +1,4 @@
 import jwt, { Secret } from 'jsonwebtoken';
-import { Error } from 'mongoose';
-
 import { NextApiRequest } from 'next';
 
 const { JWT_SECRET } = process.env;
@@ -25,7 +23,7 @@ export const verifyToken = (
 ) => {
     const token = req.headers['authorization'] || '';
 
-    if(!token.toLowerCase().startsWith('bearer ')) return new Error('No token Provided');
+    if(!token.toLowerCase().startsWith('bearer ')) return new Error('No token Provided')
 
     return jwt.verify(token, JWT_SECRET as Secret);
 
